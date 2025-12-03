@@ -8,9 +8,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const JWT_SECRET = "super-secret-for-inkle-assignment";
-const MONGO_URL = "mongodb://127.0.0.1:27017/inkle-backend";
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose
   .connect(MONGO_URL)
